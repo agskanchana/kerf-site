@@ -1,33 +1,789 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kerf — AI builds your site. Import it into WordPress in one click.</title>
-<meta name="description" content="Kerf turns the HTML your AI tool made into a real, editable WordPress site. The same design, pixel for pixel.">
-<meta name="theme-color" content="#07080d">
-<link rel="icon" href="assets/img/icon-128x128.png">
-<style>
-:root { color-scheme: dark; }
-html, body { margin: 0; min-height: 100%; }
-body { background: #07080d; color: #eef0f6; font: 17px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; display: grid; place-items: center; min-height: 100vh; padding: 24px 16px; box-sizing: border-box; }
-main { max-width: 640px; text-align: center; }
-img { width: 72px; height: 72px; border-radius: 18px; }
-h1 { font-size: clamp(32px, 6vw, 52px); line-height: 1.05; letter-spacing: -0.03em; margin: 28px 0 16px; }
-h1 span { background: linear-gradient(90deg, #13c6f2, #2f6bff 50%, #8a4dff); -webkit-background-clip: text; background-clip: text; color: transparent; }
-p { color: #a0a8bd; margin: 0 0 28px; }
-a.btn { display: inline-block; padding: 14px 26px; border-radius: 999px; background: linear-gradient(90deg, #13c6f2, #2f6bff 50%, #8a4dff); color: #fff; font-weight: 600; text-decoration: none; }
-a.btn:focus-visible { outline: 3px solid #13c6f2; outline-offset: 3px; }
-small { display: block; margin-top: 18px; color: #6b7390; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kerf — AI builds your site. Import it into WordPress in one click.</title>
+  <meta name="description" content="Kerf turns the HTML from ChatGPT, Claude, Gemini or any designer into a real WordPress site — the same design, pixel for pixel, with every word, picture and menu editable.">
+  <meta property="og:title" content="Kerf — AI builds your site. Import it into WordPress in one click.">
+  <meta property="og:description" content="Kerf turns the HTML from ChatGPT, Claude, Gemini or any designer into a real WordPress site — the same design, pixel for pixel, with every word, picture and menu editable.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kerf.site/">
+  <meta property="og:image" content="https://kerf.site/assets/video/kerf-explainer-poster.jpg">
+  <meta name="theme-color" content="#07080d">
+  <link rel="icon" href="assets/img/icon-128x128.png">
+  <link rel="apple-touch-icon" href="assets/img/icon-256x256.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js" defer></script>
 </head>
 <body>
-<main>
-	<img src="assets/img/icon-256x256.png" alt="Kerf" width="72" height="72">
-	<h1>AI builds your site. Import it into WordPress <span>in one click.</span></h1>
-	<p>Kerf turns the HTML from ChatGPT, Claude, Gemini or any designer into a real WordPress site: the same design, with every word and picture editable. The full site is on its way.</p>
-	<a class="btn" href="https://playground.wordpress.net/?blueprint-url=https://kerf.site/demo/blueprint.json" target="_blank" rel="noopener">Try the live demo</a>
-	<small>Runs in your browser. No sign-up.</small>
-</main>
+  <div class="page">
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- 1. Nav -->
+    <header class="nav" data-nav>
+      <div class="container nav-inner">
+        <a class="brand" href="#top">
+          <img class="brand-logo" src="assets/img/icon-128x128.png" width="32" height="32" alt="Kerf logo">
+          <span class="brand-name">Kerf</span>
+        </a>
+
+        <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+          <a href="#how">How it works</a>
+          <a href="#features">Features</a>
+          <a href="#demo">Demo</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <div class="nav-end">
+          <a class="btn btn-primary btn-sm nav-cta" data-kerf-demo href="https://playground.wordpress.net/?blueprint-url=https://kerf.site/demo/blueprint.json" target="_blank" rel="noopener">Try the demo</a>
+          <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation menu">
+            <svg class="icon-menu" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <line class="line-top" x1="4" y1="7" x2="20" y2="7"></line>
+              <line class="line-mid" x1="4" y1="12" x2="20" y2="12"></line>
+              <line class="line-bot" x1="4" y1="17" x2="20" y2="17"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+
+      <!-- 2. Hero -->
+      <section class="hero" id="top" aria-labelledby="hero-heading">
+        <div class="container">
+          <div class="hero-copy">
+            <div class="eyebrow">
+              <span class="eyebrow-dot" aria-hidden="true"></span>
+              <span>The WordPress theme for AI-made websites</span>
+            </div>
+            <h1 id="hero-heading">AI builds your site. Import it into WordPress <span class="grad-text">in one click.</span></h1>
+            <p class="hero-sub">Kerf turns the HTML from ChatGPT, Claude, Gemini or any designer into a real WordPress site — the same design, pixel for pixel, with every word, picture and menu editable.</p>
+            <div class="btn-row">
+              <a class="btn btn-primary btn-lg" data-kerf-demo href="https://playground.wordpress.net/?blueprint-url=https://kerf.site/demo/blueprint.json" target="_blank" rel="noopener">Try it free in your browser</a>
+              <a class="btn btn-secondary btn-lg" href="#pricing">See pricing</a>
+            </div>
+            <p class="hero-note">No sign-up. Runs in your browser.</p>
+          </div>
+
+          <div class="hero-stage">
+            <div class="frame frame-film">
+              <div class="frame-bar" aria-hidden="true">
+                <div class="frame-dots">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="frame-title">copperline-studio.zip — Kerf import</div>
+                <div class="frame-meta">0:36</div>
+              </div>
+              <div class="film-wrap">
+                <video class="film" data-film autoplay muted loop playsinline preload="metadata" poster="assets/video/kerf-explainer-poster.jpg" width="1920" height="1080">
+                  <source src="assets/video/kerf-explainer-720.mp4" media="(max-width: 760px)" type="video/mp4">
+                  <source src="assets/video/kerf-explainer.webm" type="video/webm">
+                  <source src="assets/video/kerf-explainer.mp4" type="video/mp4">
+                  <p class="film-fallback">Your browser does not support HTML video. The 36-second film shows an AI-made website for Copperline Studio imported into WordPress in one click with Kerf.</p>
+                </video>
+                <button class="film-toggle" type="button" data-film-toggle aria-label="Pause the film" aria-pressed="false">
+                  <svg class="icon-pause" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"></rect>
+                    <rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor"></rect>
+                  </svg>
+                  <svg class="icon-play" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <polygon points="7,5 19,12 7,19" fill="currentColor"></polygon>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Works with -->
+      <section class="works-with" aria-label="Compatible tools">
+        <div class="container">
+          <div class="works-row">
+            <span class="works-label">Works with HTML from</span>
+            <p class="works-list">
+              <span>ChatGPT</span>
+              <span class="sep" aria-hidden="true">&middot;</span>
+              <span>Claude</span>
+              <span class="sep" aria-hidden="true">&middot;</span>
+              <span>Gemini</span>
+              <span class="sep" aria-hidden="true">&middot;</span>
+              <span>Google Stitch</span>
+              <span class="sep" aria-hidden="true">&middot;</span>
+              <span>your designer</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. The old way -->
+      <section class="section problem" id="problem" data-reveal aria-labelledby="problem-heading">
+        <div class="container">
+          <div class="section-head">
+            <p class="mono-kicker">The old way</p>
+            <h2 id="problem-heading">WordPress used to mean starting over.</h2>
+            <p class="section-sub">You already have the finished HTML website. Until now, putting it on WordPress meant choosing between three bad options.</p>
+          </div>
+
+          <div class="problem-grid">
+            <article class="old-card">
+              <div class="kerf-cut" aria-hidden="true"></div>
+              <span class="old-time">Days</span>
+              <h3>Rebuild it in a page builder</h3>
+              <p>Days of dragging blocks to copy what you already have.</p>
+            </article>
+
+            <article class="old-card">
+              <div class="kerf-cut" aria-hidden="true"></div>
+              <span class="old-time">Weeks</span>
+              <h3>Pay a developer for a theme</h3>
+              <p>Weeks, and a bill.</p>
+            </article>
+
+            <article class="old-card">
+              <div class="kerf-cut" aria-hidden="true"></div>
+              <span class="old-time">Minutes, locked</span>
+              <h3>Paste it into a Custom HTML block</h3>
+              <p>Up in minutes, but nothing you can edit.</p>
+            </article>
+          </div>
+
+          <article class="kerf-way-card">
+            <div class="kerf-way-badge">
+              <img src="assets/img/icon-128x128.png" width="28" height="28" loading="lazy" alt="Kerf icon">
+              <span>With Kerf</span>
+            </div>
+            <div class="kerf-way-body">
+              <h3>Minutes — the same design, everything editable.</h3>
+              <p>Drop in the ZIP or paste the HTML. Kerf turns your pages, tags, classes, stylesheets and scripts into real WordPress blocks you edit in WordPress's own block editor.</p>
+            </div>
+            <div class="kerf-way-action">
+              <a class="btn btn-primary" data-kerf-demo href="https://playground.wordpress.net/?blueprint-url=https://kerf.site/demo/blueprint.json" target="_blank" rel="noopener">Try it in your browser</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 5. How it works -->
+      <section class="section how" id="how" data-reveal aria-labelledby="how-heading">
+        <div class="container">
+          <div class="section-head">
+            <p class="mono-kicker">How it works</p>
+            <h2 id="how-heading">Three steps. About a minute.</h2>
+            <p class="section-sub">Kerf is a WordPress theme with an importer inside. Open Kerf in WordPress, drop in your design, and go live.</p>
+          </div>
+
+          <div class="steps-stack">
+            <article class="step-row">
+              <div class="step-copy">
+                <span class="step-num grad-text">01</span>
+                <h3>Drop in your design</h3>
+                <p>Give Kerf the HTML website an AI tool or a designer made — as a ZIP with its pages, stylesheets, scripts and pictures, or as pasted HTML.</p>
+              </div>
+              <div class="step-media">
+                <div class="frame">
+                  <div class="frame-bar" aria-hidden="true">
+                    <div class="frame-dots"><span></span><span></span><span></span></div>
+                    <div class="frame-title">Kerf &rarr; Import design</div>
+                  </div>
+                  <img src="assets/img/screenshot-2.png" width="1440" height="900" loading="lazy" alt="Kerf Import design screen in WordPress with a drop zone for a ZIP file and an option to paste HTML">
+                </div>
+              </div>
+            </article>
+
+            <article class="step-row step-row-reverse">
+              <div class="step-copy">
+                <span class="step-num grad-text">02</span>
+                <h3>Check before anything changes</h3>
+                <p>Kerf checks the design and shows what it found, what will and won't work, and where each page goes before anything is written. If an app needs a build step first, such as a React project from Lovable, Bolt or v0, Kerf says so upfront.</p>
+              </div>
+              <div class="step-media">
+                <div class="frame">
+                  <div class="frame-bar" aria-hidden="true">
+                    <div class="frame-dots"><span></span><span></span><span></span></div>
+                    <div class="frame-title">copperline-studio.zip &mdash; Pre-import check</div>
+                  </div>
+                  <img src="assets/img/screenshot-3.png" width="1440" height="900" loading="lazy" alt="Kerf check screen showing 1 page, 3 stylesheets, 3 scripts and 22 pictures found in Copperline Studio before importing">
+                </div>
+              </div>
+            </article>
+
+            <article class="step-row">
+              <div class="step-copy">
+                <span class="step-num grad-text">03</span>
+                <h3>One click, and it's WordPress</h3>
+                <p>In one click, your header, footer, pages, styles, scripts and pictures are live, with a full report of everything Kerf did. You can also undo the last import anytime.</p>
+              </div>
+              <div class="step-media">
+                <div class="frame">
+                  <div class="frame-bar" aria-hidden="true">
+                    <div class="frame-dots"><span></span><span></span><span></span></div>
+                    <div class="frame-title">Import complete &mdash; 100% match</div>
+                  </div>
+                  <img src="assets/img/screenshot-4.png" width="1440" height="900" loading="lazy" alt="Kerf import report showing 100 percent selector match for Copperline Studio and buttons to view or edit the page">
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Proof -->
+      <section class="section proof" id="proof" data-reveal aria-labelledby="proof-heading">
+        <div class="container">
+          <div class="section-head">
+            <p class="mono-kicker">Pixel-for-pixel proof</p>
+            <h2 id="proof-heading">Not close. The same.</h2>
+            <p class="section-sub">Below, the design as the AI made it and the WordPress page Kerf made from it are laid on top of each other with the browser's "difference" blend — where they differed you would see color; it is black.</p>
+          </div>
+
+          <div class="frame proof-frame">
+            <div class="frame-bar proof-bar">
+              <div class="frame-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+              <div class="proof-equation" aria-label="Comparison formula">
+                <span class="proof-pill">The AI's page</span>
+                <span class="proof-op" aria-hidden="true">&minus;</span>
+                <span class="proof-pill">Your WordPress page</span>
+                <span class="proof-result-label">= black</span>
+              </div>
+              <button class="proof-toggle" type="button" data-proof-toggle aria-pressed="true">
+                <span class="proof-toggle-dot" aria-hidden="true"></span>
+                <span>Subtract</span>
+              </button>
+            </div>
+
+            <div class="proof-stage" data-proof>
+              <img class="proof-a" src="assets/img/copperline-original.jpg" width="1440" height="900" loading="lazy" alt="The Copperline Studio page as the AI tool made it">
+              <img class="proof-b" src="assets/img/copperline-wordpress.jpg" width="1440" height="900" loading="lazy" alt="The Copperline Studio page running on WordPress after importing with Kerf">
+            </div>
+          </div>
+
+          <div class="proof-stats">
+            <div class="stat-card">
+              <span class="stat-val grad-text">134 / 134</span>
+              <span class="stat-label">CSS selectors still match</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-val grad-text">0</span>
+              <span class="stat-label">classes renamed</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-val grad-text">Every</span>
+              <span class="stat-label">stylesheet and script kept</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Edit -->
+      <section class="section edit" id="edit" data-reveal aria-labelledby="edit-heading">
+        <div class="container">
+          <div class="section-head">
+            <p class="mono-kicker">Inside WordPress</p>
+            <h2 id="edit-heading">Then edit it like any WordPress site.</h2>
+            <p class="section-sub">Open your page in WordPress's own block editor. Your design's HTML structure stays intact while every word, picture, menu and form is yours to edit.</p>
+          </div>
+
+          <div class="frame edit-hero-frame">
+            <div class="frame-bar" aria-hidden="true">
+              <div class="frame-dots"><span></span><span></span><span></span></div>
+              <div class="frame-title">Copperline Studio &mdash; WordPress Block Editor</div>
+            </div>
+            <img src="assets/img/screenshot-6.jpg" width="1440" height="900" loading="lazy" alt="Copperline Studio open in the WordPress block editor showing HTML tag and class names in List View and visual editing panels">
+          </div>
+
+          <div class="edit-grid">
+            <article class="edit-card">
+              <div class="frame edit-card-shot">
+                <div class="frame-bar" aria-hidden="true">
+                  <div class="frame-dots"><span></span><span></span><span></span></div>
+                  <div class="frame-title">Menu (6 items)</div>
+                </div>
+                <img src="assets/img/screenshot-7.png" width="1440" height="900" loading="lazy" alt="The Menu panel in the WordPress editor listing the six Copperline Studio navigation items with reorder, edit and delete controls">
+              </div>
+              <div class="edit-card-body">
+                <h3>Menus as menus</h3>
+                <p>Edit the design's navigation as a real menu. Reorder, rename, remove or add items in the design's own style.</p>
+              </div>
+            </article>
+
+            <article class="edit-card">
+              <div class="frame edit-card-shot">
+                <div class="frame-bar" aria-hidden="true">
+                  <div class="frame-dots"><span></span><span></span><span></span></div>
+                  <div class="frame-title">Send this form with Kerf</div>
+                </div>
+                <img src="assets/img/screenshot-8.png" width="1440" height="900" loading="lazy" alt="The contact form selected in the WordPress editor with the Send this form with Kerf toggle enabled">
+              </div>
+              <div class="edit-card-body">
+                <h3>Forms that email you</h3>
+                <p>The design's contact form sends each message to your email, with spam protection and a form inbox inside WordPress.</p>
+              </div>
+            </article>
+
+            <article class="edit-card">
+              <div class="frame edit-card-shot">
+                <div class="frame-bar" aria-hidden="true">
+                  <div class="frame-dots"><span></span><span></span><span></span></div>
+                  <div class="frame-title">Kerf &rarr; Links</div>
+                </div>
+                <img src="assets/img/screenshot-9.png" width="1440" height="900" loading="lazy" alt="Kerf Links screen listing all 34 links in Copperline Studio pointed at WordPress pages">
+              </div>
+              <div class="edit-card-body">
+                <h3>Links that follow your pages</h3>
+                <p>Every link in the design points at your WordPress pages under Kerf &rarr; Links, so renaming a page never breaks a link.</p>
+              </div>
+            </article>
+
+            <article class="edit-card edit-card-tools">
+              <div class="edit-tools-list">
+                <div class="edit-tool-item">
+                  <div class="tool-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 20h9"></path>
+                      <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4>Words and pictures in place</h4>
+                    <p>Click any heading, paragraph, picture or background photo in the block editor to change it right on the page.</p>
+                  </div>
+                </div>
+
+                <div class="edit-tool-item">
+                  <div class="tool-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="4" width="14" height="10" rx="2"></rect>
+                      <rect x="16" y="9" width="6" height="11" rx="1.5"></rect>
+                      <line x1="6" y1="18" x2="12" y2="18"></line>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4>Hide on any device</h4>
+                    <p>Hide any section or element on phones, tablets or computers using the design's own widths.</p>
+                  </div>
+                </div>
+
+                <div class="edit-tool-item">
+                  <div class="tool-icon" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 7v6h6"></path>
+                      <path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4>Undo the last import</h4>
+                    <p>Testing a design? One click rolls back the last import cleanly.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="edit-card-body">
+                <h3>Built for everyday changes</h3>
+                <p>No code to touch for daily edits, responsive visibility or rolling back an import.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. Live demo band -->
+      <section class="section demo-section" id="demo" data-reveal aria-labelledby="demo-heading">
+        <div class="container">
+          <div class="demo-band">
+            <div class="demo-band-inner">
+              <div class="eyebrow">
+                <span class="eyebrow-dot" aria-hidden="true"></span>
+                <span>Live in WordPress Playground</span>
+              </div>
+              <h2 id="demo-heading">Try it with your own design. Right now.</h2>
+              <p class="demo-lead">Open Kerf in WordPress Playground — a private WordPress that runs inside your browser, with Kerf installed. Nothing to install, no account. Go to Kerf &rarr; Import design, drop in your ZIP and look at the result. Your design never leaves your computer, and the demo is gone when you close the tab.</p>
+
+              <ol class="demo-steps" aria-label="How to use the live demo">
+                <li>
+                  <span class="demo-step-n">1</span>
+                  <span>Open the demo</span>
+                </li>
+                <li class="demo-step-arrow" aria-hidden="true">&rarr;</li>
+                <li>
+                  <span class="demo-step-n">2</span>
+                  <span>Kerf &rarr; Import design</span>
+                </li>
+                <li class="demo-step-arrow" aria-hidden="true">&rarr;</li>
+                <li>
+                  <span class="demo-step-n">3</span>
+                  <span>Drop in your ZIP</span>
+                </li>
+              </ol>
+
+              <div class="btn-row demo-actions">
+                <a class="btn btn-primary btn-lg" data-kerf-demo href="https://playground.wordpress.net/?blueprint-url=https://kerf.site/demo/blueprint.json" target="_blank" rel="noopener">Open the live demo</a>
+                <a class="btn btn-secondary btn-lg" href="demo/copperline-studio.zip" download>
+                  <span>Download a sample design</span>
+                  <small class="btn-sub">ZIP &middot; 2 MB</small>
+                </a>
+              </div>
+
+              <p class="demo-note">No design at hand? Download the Copperline Studio sample above and drop it in. The first start takes about half a minute; it works best on a computer, in Chrome, Edge, Firefox or Safari.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. Features -->
+      <section class="section features" id="features" data-reveal aria-labelledby="features-heading">
+        <div class="container">
+          <div class="section-head">
+            <p class="mono-kicker">Complete feature set</p>
+            <h2 id="features-heading">Everything in one theme.</h2>
+            <p class="section-sub">The imported design lives inside Kerf, so Kerf stays the active theme on your site — with every tool below built in.</p>
+          </div>
+
+          <div class="bento">
+            <article class="bento-tile bento-ai">
+              <div class="bento-top">
+                <div class="bento-icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z"></path>
+                    <path d="M19 16l.9 2.1L22 19l-2.1.9L19 22l-.9-2.1L16 19l2.1-.9L19 16z"></path>
+                  </svg>
+                </div>
+                <span class="bento-tag">Included &middot; Bring your own Gemini key</span>
+              </div>
+              <h3>Kerf AI</h3>
+              <p class="bento-lead">Keep building and editing with AI directly inside WordPress, matched to your design's classes, fonts and colors.</p>
+              <div class="ai-tools-grid">
+                <div class="ai-tool">
+                  <h4>Build with AI</h4>
+                  <p>Generate a whole site from your words and your own photos, ready to check and import.</p>
+                </div>
+                <div class="ai-tool">
+                  <h4>Make a page</h4>
+                  <p>Turn a document from Word, Google Docs or Markdown into a new page in your design.</p>
+                </div>
+                <div class="ai-tool">
+                  <h4>Change with AI</h4>
+                  <p>Update a whole page or one selected section in your design, just as you ask.</p>
+                </div>
+              </div>
+              <p class="bento-foot">Uses your own Google Gemini key. A free key works, and nothing is sent to Google until you ask.</p>
+            </article>
+
+            <article class="bento-tile bento-wide">
+              <div class="bento-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                  <path d="M3 3v5h5"></path>
+                  <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"></path>
+                  <path d="M16 16h5v5"></path>
+                </svg>
+              </div>
+              <h3>Update design</h3>
+              <p>Have a newer version from your AI tool? Apply it section by section while keeping the edits you already made in WordPress.</p>
+            </article>
+
+            <article class="bento-tile">
+              <div class="bento-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="9" y1="20" x2="9" y2="9"></line>
+                </svg>
+              </div>
+              <h3>Every page of your design</h3>
+              <p>Every page in your ZIP is imported together and linked to each other automatically.</p>
+            </article>
+
+            <article class="bento-tile">
+              <div class="bento-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
+                </svg>
+              </div>
+              <h3>Your blog, in your design</h3>
+              <p>Blog, posts, archives, search and "not found" pages use your design's own cards, or a clean default style measured from your home page.</p>
+            </article>
+
+            <article class="bento-tile">
+              <div class="bento-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+              </div>
+              <h3>Forms that send</h3>
+              <p>Your design's contact form emails every message to you, with spam protection and a form inbox inside WordPress.</p>
+            </article>
+
+            <article class="bento-tile">
+              <div class="bento-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 21h18"></path>
+                  <path d="M5 21V7l8-4v18"></path>
+                  <path d="M19 21V11l-6-4"></path>
+                  <path d="M9 9v.01"></path>
+                  <path d="M9 13v.01"></path>
+                  <path d="M9 17v.01"></path>
+                </svg>
+              </div>
+              <h3>Business details, once</h3>
+              <p>Change your phone, email, address or hours once and update them everywhere at once. Swap background pictures across every page at once too.</p>
+            </article>
+
+            <article class="bento-tile">
+              <div class="bento-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </div>
+              <h3>Client mode</h3>
+              <p>Lock the layout while keeping words, pictures and links open — safe to hand to a client.</p>
+            </article>
+
+            <article class="bento-tile">
+              <div class="bento-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg>
+              </div>
+              <h3>Safe by design</h3>
+              <p>Every design is checked before import, the last import can be undone, and your design's code is never rewritten.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. Pricing -->
+      <section class="section pricing" id="pricing" data-reveal aria-labelledby="pricing-heading">
+        <div class="container">
+          <div class="section-head section-head-center">
+            <div class="eyebrow">
+              <span class="eyebrow-dot" aria-hidden="true"></span>
+              <span>Launch prices</span>
+            </div>
+            <h2 id="pricing-heading">Pay once. Keep it for life.</h2>
+            <p class="section-sub">Everything is included in every plan. Plans differ only by how many sites you use Kerf on.</p>
+          </div>
+
+          <div class="pricing-grid">
+            <article class="price-card">
+              <div class="price-card-head">
+                <h3>Personal</h3>
+                <p class="price-sites">1 site</p>
+              </div>
+              <div class="price-amount">
+                <s class="price-regular">$99</s>
+                <span class="price-current">$49</span>
+              </div>
+              <ul class="price-terms">
+                <li>One-time payment</li>
+                <li>Lifetime updates</li>
+                <li>Everything included</li>
+              </ul>
+              <span class="btn btn-soon" aria-disabled="true">Coming soon</span>
+            </article>
+
+            <article class="price-card price-card-popular">
+              <div class="popular-pill">Most popular</div>
+              <div class="price-card-head">
+                <h3>Freelancer</h3>
+                <p class="price-sites">5 sites</p>
+              </div>
+              <div class="price-amount">
+                <s class="price-regular">$179</s>
+                <span class="price-current">$99</span>
+              </div>
+              <ul class="price-terms">
+                <li>One-time payment</li>
+                <li>Lifetime updates</li>
+                <li>Everything included</li>
+              </ul>
+              <span class="btn btn-soon" aria-disabled="true">Coming soon</span>
+            </article>
+
+            <article class="price-card">
+              <div class="price-card-head">
+                <h3>Agency</h3>
+                <p class="price-sites">Unlimited sites</p>
+              </div>
+              <div class="price-amount">
+                <s class="price-regular">$299</s>
+                <span class="price-current">$199</span>
+              </div>
+              <ul class="price-terms">
+                <li>One-time payment</li>
+                <li>Lifetime updates</li>
+                <li>Everything included</li>
+              </ul>
+              <span class="btn btn-soon" aria-disabled="true">Coming soon</span>
+            </article>
+          </div>
+
+          <div class="included-box">
+            <h3 class="included-title">Every plan includes</h3>
+            <ul class="included-list">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Multi-page ZIP and pasted HTML import with pre-import check</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Block editor for words, pictures, menus and background images</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Blog, posts, archives, search and "not found" pages in your design</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Update design section by section while keeping your edits</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Kerf AI (Build with AI, Make a page, Change with AI) with your Gemini key</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Contact forms that email you, with spam protection and form inbox</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Client mode and business details updated across every page at once</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Device visibility at your design's widths and one-click import undo</span>
+              </li>
+            </ul>
+          </div>
+
+          <p class="pricing-note">Secure checkout through Freemius opens soon. Meanwhile, <a data-kerf-demo href="https://playground.wordpress.net/?blueprint-url=https://kerf.site/demo/blueprint.json" target="_blank" rel="noopener">try Kerf with your own design in the live demo</a>.</p>
+        </div>
+      </section>
+
+      <!-- 11. FAQ -->
+      <section class="section faq" id="faq" data-reveal aria-labelledby="faq-heading">
+        <div class="container faq-layout">
+          <div class="faq-head">
+            <p class="mono-kicker">FAQ</p>
+            <h2 id="faq-heading">Common questions.</h2>
+            <p class="section-sub">Everything you need to know about importing your design and running it on WordPress.</p>
+          </div>
+
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>What does Kerf do exactly?</summary>
+              <div class="faq-answer">
+                <p>Kerf is a WordPress theme with an importer inside. You give it the HTML website an AI tool or a designer made — as a ZIP, or pasted HTML — and it becomes a real WordPress site: the same tags, classes, stylesheets and scripts, turned into blocks you edit in WordPress's own block editor. Not a copy that looks close: the same page.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>Which AI tools work?</summary>
+              <div class="faq-answer">
+                <p>Kerf works with HTML from ChatGPT, Claude, Gemini, Google Stitch or any designer. Apps that need a build step first — such as React projects from Lovable, Bolt or v0 — are not supported yet. Kerf checks the ZIP and says so before importing.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>Will it really look the same?</summary>
+              <div class="faq-answer">
+                <p>Yes. Kerf keeps your design's HTML tags, classes, stylesheets and scripts intact rather than rebuilding the page with theme widgets. On our sample Copperline Studio design, 134 of 134 CSS selectors still match after the import, and the screenshot of the AI's page and the WordPress page are identical.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>Do I need to know code?</summary>
+              <div class="faq-answer">
+                <p>No. You drop in the ZIP, review Kerf's check and click once to import. After that, you edit words and pictures in place in the WordPress block editor, edit the menu as a menu, manage every page link under Kerf &rarr; Links, and receive contact form emails automatically.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>Can I try it before I buy?</summary>
+              <div class="faq-answer">
+                <p>Yes. Open the <a data-kerf-demo href="https://playground.wordpress.net/?blueprint-url=https://kerf.site/demo/blueprint.json" target="_blank" rel="noopener">live demo in WordPress Playground</a> to run a private WordPress with Kerf installed right inside your browser. There is nothing to install and no account needed. Drop in your own ZIP or test with the sample Copperline Studio ZIP.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>What does "lifetime" mean?</summary>
+              <div class="faq-answer">
+                <p>You pay once for your plan's number of sites — 1 site on Personal, 5 sites on Freelancer, or unlimited sites on Agency. Every update and every feature in Kerf is included for life, with no recurring subscription.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>Does Kerf AI cost extra?</summary>
+              <div class="faq-answer">
+                <p>No. Kerf AI is included in every plan and uses your own Google Gemini key directly between you and Google. A free key works, and nothing is sent to Google until you ask Kerf AI to build a site, make a page or change a section.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>Can I use it for client sites?</summary>
+              <div class="faq-answer">
+                <p>Yes. Freelancer covers 5 sites and Agency covers unlimited sites. Kerf also includes client mode — which locks the layout while keeping words, pictures and links open so it is safe to hand to a client — and lets you change business details like phone, email, address and hours once across every page.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary>Is it a theme or a plugin?</summary>
+              <div class="faq-answer">
+                <p>Kerf is a WordPress theme with the importer and all editing tools inside. The imported design lives in it, so Kerf stays the active theme on that site, as with Divi or other builder themes.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- 12. Final call -->
+      <section class="section final-call" data-reveal aria-labelledby="final-heading">
+        <div class="container">
+          <div class="final-box">
+            <h2 id="final-heading">Your site is already made. Put it on WordPress.</h2>
+            <p class="final-sub">Test Kerf with your own ZIP right in your browser, or explore the one-time launch plans.</p>
+            <div class="btn-row">
+              <a class="btn btn-primary btn-lg" data-kerf-demo href="https://playground.wordpress.net/?blueprint-url=https://kerf.site/demo/blueprint.json" target="_blank" rel="noopener">Try it free in your browser</a>
+              <a class="btn btn-secondary btn-lg" href="#pricing">See pricing</a>
+            </div>
+            <p class="hero-note">No sign-up. Runs in your browser.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 13. Footer -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-top">
+          <a class="brand" href="#top">
+            <img class="brand-logo" src="assets/img/icon-128x128.png" width="28" height="28" loading="lazy" alt="Kerf logo">
+            <span class="brand-name">Kerf</span>
+          </a>
+
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="#how">How it works</a>
+            <a href="#features">Features</a>
+            <a href="#demo">Demo</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#faq">FAQ</a>
+          </nav>
+        </div>
+
+        <p class="footer-legal">&copy; 2026 Kerf. Kerf is a WordPress theme. Copperline Studio is an invented studio used to show Kerf. Kerf is not affiliated with the WordPress Foundation.</p>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
