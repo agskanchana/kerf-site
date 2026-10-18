@@ -311,14 +311,9 @@ a:hover {
   color: var(--muted);
 }
 
-.btn-soon {
+.btn-buy {
   width: 100%;
   min-height: 48px;
-  background: rgba(17, 20, 31, 0.55);
-  color: var(--muted);
-  border: 1px dashed var(--line-2);
-  cursor: not-allowed;
-  user-select: none;
 }
 
 /* Browser / Product Frames */
