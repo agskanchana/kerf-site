@@ -27,7 +27,7 @@
     <header class="nav" data-nav>
       <div class="container nav-inner">
         <a class="brand" href="#top">
-          <img class="brand-logo" src="assets/img/icon-128x128.png" width="32" height="32" alt="Kerf logo">
+          <img class="brand-logo" src="assets/img/kerf-logo.png" width="56" height="56" alt="">
           <span class="brand-name">Kerf</span>
         </a>
 
@@ -89,7 +89,9 @@
                   <source src="assets/video/kerf-explainer.mp4" type="video/mp4">
                   <p class="film-fallback">Your browser does not support HTML video. The 36-second film shows an AI-made website for Copperline Studio imported into WordPress in one click with Kerf.</p>
                 </video>
-                <button class="film-toggle" type="button" data-film-toggle aria-label="Pause the film" aria-pressed="false">
+              </div>
+              <div class="reel" data-reel>
+                <button class="reel-play" type="button" data-film-toggle aria-label="Pause the film" aria-pressed="false">
                   <svg class="icon-pause" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                     <rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"></rect>
                     <rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor"></rect>
@@ -98,6 +100,19 @@
                     <polygon points="7,5 19,12 7,19" fill="currentColor"></polygon>
                   </svg>
                 </button>
+                <div class="reel-track" data-reel-track>
+                  <div class="reel-ruler" aria-hidden="true"></div>
+                  <div class="reel-progress" aria-hidden="true"></div>
+                  <ol class="reel-chapters" aria-label="Chapters">
+                    <li style="--at:0"><button type="button" data-t="0">AI writes it</button></li>
+                    <li style="--at:6.5"><button type="button" data-t="6.5">Now what?</button></li>
+                    <li style="--at:11"><button type="button" data-t="11">Into Kerf</button></li>
+                    <li style="--at:17"><button type="button" data-t="17">Checked first</button></li>
+                    <li style="--at:22.5"><button type="button" data-t="22.5">On WordPress</button></li>
+                    <li style="--at:28"><button type="button" data-t="28">Edit it</button></li>
+                  </ol>
+                </div>
+                <span class="reel-time" aria-hidden="true"><span class="reel-chapter" data-reel-chapter>AI writes it</span><span class="reel-clock" data-reel-clock>0:00</span></span>
               </div>
             </div>
           </div>
@@ -242,28 +257,42 @@
           <div class="section-head">
             <p class="mono-kicker">Pixel-for-pixel proof</p>
             <h2 id="proof-heading">Not close. The same.</h2>
-            <p class="section-sub">Below, the design as the AI made it and the WordPress page Kerf made from it are laid on top of each other with the browser's "difference" blend — where they differed you would see color; it is black.</p>
+            <p class="section-sub">A page rebuilt by hand looks close. Kerf's looks the same, because it is the same: the AI's page and the WordPress page, subtracted one from the other, leave nothing.</p>
           </div>
 
-          <div class="frame proof-frame">
-            <div class="frame-bar proof-bar">
-              <div class="frame-dots" aria-hidden="true"><span></span><span></span><span></span></div>
-              <div class="proof-equation" aria-label="Comparison formula">
-                <span class="proof-pill">The AI's page</span>
-                <span class="proof-op" aria-hidden="true">&minus;</span>
-                <span class="proof-pill">Your WordPress page</span>
-                <span class="proof-result-label">= black</span>
+          <div class="proof-eq" data-proof>
+            <figure class="proof-panel">
+              <figcaption class="proof-cap">What your AI tool made</figcaption>
+              <div class="proof-win">
+                <div class="proof-addr" aria-hidden="true">file:///Downloads/copperline-studio/index.html</div>
+                <img class="proof-shot" src="assets/img/copperline-original.jpg" width="1440" height="900" loading="lazy" alt="The Copperline Studio page as the AI tool made it, opened from its folder.">
               </div>
-              <button class="proof-toggle" type="button" data-proof-toggle aria-pressed="true">
-                <span class="proof-toggle-dot" aria-hidden="true"></span>
-                <span>Subtract</span>
-              </button>
-            </div>
+            </figure>
+            <span class="proof-sign" aria-hidden="true">&minus;</span>
+            <figure class="proof-panel">
+              <figcaption class="proof-cap" data-proof-middle>The same page on WordPress</figcaption>
+              <div class="proof-win">
+                <div class="proof-addr" aria-hidden="true">copperline-studio.com</div>
+                <img class="proof-shot proof-shot-b" src="assets/img/copperline-wordpress.jpg" width="1440" height="900" loading="lazy" alt="The Copperline Studio page on WordPress, after Kerf imported it. It looks the same.">
+              </div>
+            </figure>
+            <span class="proof-sign" aria-hidden="true">=</span>
+            <figure class="proof-panel proof-panel-diff">
+              <figcaption class="proof-cap">The difference</figcaption>
+              <div class="proof-win">
+                <div class="proof-addr" aria-hidden="true">worked out by your browser</div>
+                <div class="proof-stage">
+                  <img class="proof-a" src="assets/img/copperline-original.jpg" width="1440" height="900" loading="lazy" alt="">
+                  <img class="proof-b" src="assets/img/copperline-wordpress.jpg" width="1440" height="900" loading="lazy" alt="">
+                  <p class="proof-verdict" data-proof-verdict>Nothing.<span>0 of 1,296,000 pixels differ.</span></p>
+                </div>
+              </div>
+            </figure>
+          </div>
 
-            <div class="proof-stage" data-proof>
-              <img class="proof-a" src="assets/img/copperline-original.jpg" width="1440" height="900" loading="lazy" alt="The Copperline Studio page as the AI tool made it">
-              <img class="proof-b" src="assets/img/copperline-wordpress.jpg" width="1440" height="900" loading="lazy" alt="The Copperline Studio page running on WordPress after importing with Kerf">
-            </div>
+          <div class="proof-try">
+            <button class="btn btn-secondary proof-toggle" type="button" data-proof-toggle>Compare a lookalike instead</button>
+            <p class="proof-note" data-proof-note role="status">The black panel isn't a picture. Your browser subtracts the WordPress page from the AI's page as you look: where any pixel differs, it lights up.</p>
           </div>
 
           <div class="proof-stats">
@@ -768,7 +797,7 @@
       <div class="container footer-inner">
         <div class="footer-top">
           <a class="brand" href="#top">
-            <img class="brand-logo" src="assets/img/icon-128x128.png" width="28" height="28" loading="lazy" alt="Kerf logo">
+            <img class="brand-logo" src="assets/img/kerf-logo.png" width="40" height="40" loading="lazy" alt="">
             <span class="brand-name">Kerf</span>
           </a>
 

@@ -371,6 +371,10 @@ a:hover {
   background: rgba(39, 201, 63, 0.45);
 }
 
+.frame-meta {
+  flex-shrink: 0;
+}
+
 .frame-title,
 .frame-meta {
   font-family: var(--font-mono);
@@ -411,17 +415,22 @@ a:hover {
   color: var(--text);
   text-decoration: none;
   font-family: var(--font-display);
-  font-size: 21px;
+  font-size: 24px;
   font-weight: 700;
   letter-spacing: -0.025em;
   flex-shrink: 0;
 }
 
 .brand-logo {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
+  width: 56px;
+  height: 56px;
+  margin: -8px -6px -8px -8px;
   flex-shrink: 0;
+}
+
+.footer .brand-logo {
+  width: 40px;
+  height: 40px;
 }
 
 .nav-links {
@@ -596,44 +605,144 @@ a:hover {
   color: var(--muted);
 }
 
-.film-toggle {
-  position: absolute;
-  right: 16px;
-  bottom: 16px;
-  z-index: 5;
+/* The film's timeline: a ruler, a tick a second and a long one every five,
+   the chapters on it, the gradient filling as the film plays. It needs the
+   script (it seeks and shows the time), so it shows only with it. */
+.reel {
+  display: none;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 18px;
+  padding: 14px 20px 16px;
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+}
+
+.js .reel {
+  display: grid;
+}
+
+.reel-play {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   padding: 0;
   border-radius: 50%;
   border: 1px solid var(--line-2);
-  background: rgba(7, 8, 13, 0.78);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  background: var(--surface-2);
   color: var(--text);
   cursor: pointer;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
-  transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
 }
 
-.film-toggle:hover {
-  background: var(--surface-2);
+.reel-play:hover {
   border-color: var(--cyan);
-  transform: scale(1.05);
 }
 
-.film-toggle .icon-play {
+.reel-play .icon-play {
   display: none;
 }
 
-.film-toggle[aria-pressed="true"] .icon-pause {
+.reel-play[aria-pressed="true"] .icon-pause {
   display: none;
 }
 
-.film-toggle[aria-pressed="true"] .icon-play {
+.reel-play[aria-pressed="true"] .icon-play {
   display: block;
+}
+
+.reel-track {
+  --dur: 36;
+  position: relative;
+  height: 46px;
+  cursor: pointer;
+}
+
+.reel-ruler {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.16) 1px, transparent 1px),
+    linear-gradient(to right, rgba(255, 255, 255, 0.34) 1px, transparent 1px);
+  background-size: calc(100% / var(--dur)) 6px, calc(100% / var(--dur) * 5) 13px;
+  background-position: left bottom, left bottom;
+  background-repeat: repeat-x;
+}
+
+.reel-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--grad);
+  transform-origin: left center;
+  transform: scaleX(var(--p, 0));
+}
+
+.reel-chapters {
+  position: absolute;
+  inset: 0 0 16px 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reel-chapters li {
+  position: absolute;
+  top: 0;
+  left: calc(var(--at) / var(--dur) * 100%);
+}
+
+.reel-chapters button {
+  position: relative;
+  padding: 2px 0 8px;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font: 500 13px/1.2 var(--font-sans);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.reel-chapters button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -16px;
+  width: 1px;
+  height: 22px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.reel-chapters button:hover {
+  color: var(--text);
+}
+
+.reel-chapters .is-active button {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.reel-time {
+  min-width: 3.2em;
+  padding-bottom: 1px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: var(--faint);
+  text-align: right;
+}
+
+.reel-chapter {
+  display: none;
 }
 
 /* ==========================================================================
@@ -849,80 +958,65 @@ a:hover {
    6. Proof (#proof)
    ========================================================================== */
 
-.proof-frame {
-  border-color: var(--line-2);
-}
-
-.proof-bar {
-  flex-wrap: wrap;
-  gap: 12px 16px;
-}
-
-.proof-equation {
-  display: flex;
-  flex-wrap: wrap;
+/* An equation, read left to right: the AI's page, minus the WordPress page,
+   equals what differs, which is nothing. */
+.proof-eq {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 12.5px;
+  gap: 16px;
 }
 
-.proof-pill {
-  padding: 4px 10px;
-  border-radius: 6px;
-  background: var(--surface-2);
-  border: 1px solid var(--line);
-  color: var(--text);
+.proof-panel {
+  margin: 0;
+  min-width: 0;
 }
 
-.proof-op {
-  color: var(--cyan);
+.proof-cap {
+  margin-bottom: 10px;
+  font-size: 14px;
   font-weight: 600;
-}
-
-.proof-result-label {
-  padding: 4px 10px;
-  border-radius: 6px;
-  background: rgba(19, 198, 242, 0.12);
-  border: 1px solid rgba(19, 198, 242, 0.3);
-  color: var(--cyan);
-  font-weight: 500;
-}
-
-.proof-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(19, 198, 242, 0.45);
-  background: rgba(19, 198, 242, 0.12);
   color: var(--text);
+}
+
+.proof-win {
+  border-radius: 12px;
+  border: 1px solid var(--line-2);
+  background: var(--surface);
+  overflow: hidden;
+  box-shadow: 0 18px 44px -18px rgba(0, 0, 0, 0.8);
+}
+
+.proof-addr {
+  padding: 7px 12px;
+  border-bottom: 1px solid var(--line);
   font-family: var(--font-mono);
-  font-size: 12.5px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  font-size: 11.5px;
+  color: var(--faint);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.proof-toggle-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--cyan);
-  box-shadow: 0 0 8px var(--cyan);
-  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+.proof-shot {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1440 / 900;
 }
 
-.proof-toggle[aria-pressed="false"] {
-  background: var(--surface-2);
-  border-color: var(--line-2);
-  color: var(--muted);
+.proof-sign {
+  margin-top: 30px;
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--cyan);
 }
 
-.proof-toggle[aria-pressed="false"] .proof-toggle-dot {
-  background: var(--faint);
-  box-shadow: none;
+.proof-panel-diff .proof-win {
+  border-color: rgba(19, 198, 242, 0.45);
+  box-shadow: 0 0 0 1px rgba(19, 198, 242, 0.12), 0 18px 44px -18px rgba(19, 198, 242, 0.35);
 }
 
 /* Both pictures are drawn the same way, at the same size, so the browser
@@ -948,14 +1042,71 @@ a:hover {
 
 .proof-b {
   mix-blend-mode: difference;
+  transition: transform 0.5s ease;
 }
 
-.proof-stage[data-subtract="off"] .proof-a {
+/* The lookalike: the same page moved a few pixels, as a rebuild is "close". */
+.proof-shot-b {
+  transition: transform 0.5s ease;
+}
+
+.proof-eq[data-lookalike] .proof-b,
+.proof-eq[data-lookalike] .proof-shot-b {
+  transform: translate(3px, 2px);
+}
+
+.proof-verdict {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 12px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-weight: 700;
+  color: var(--text);
+  isolation: isolate;
+  transition: opacity 0.3s ease;
+}
+
+.proof-verdict span {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.proof-eq[data-lookalike] .proof-verdict {
   opacity: 0;
 }
 
-.proof-stage[data-subtract="off"] .proof-b {
-  mix-blend-mode: normal;
+.proof-try {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.proof-toggle {
+  flex-shrink: 0;
+}
+
+html:not(.js) .proof-toggle {
+  display: none;
+}
+
+.proof-note {
+  margin: 0;
+  max-width: 62ch;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted);
 }
 
 .proof-stats {
@@ -1668,6 +1819,10 @@ a:hover {
    ========================================================================== */
 
 @media (max-width: 1100px) {
+  .reel-chapters button {
+    font-size: 12px;
+  }
+
   .bento {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1696,6 +1851,48 @@ a:hover {
 }
 
 @media (max-width: 900px) {
+  .proof-eq {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .proof-sign {
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .proof-try {
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .reel-chapters button {
+    width: 14px;
+    height: 30px;
+    padding: 0;
+    font-size: 0;
+  }
+
+  .reel-chapter {
+    display: inline;
+  }
+
+  .reel-clock {
+    display: none;
+  }
+
+  .reel-time {
+    min-width: 0;
+    font-family: var(--font-sans);
+    color: var(--text);
+    font-weight: 600;
+  }
+
   .problem-grid {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -1735,6 +1932,21 @@ a:hover {
 }
 
 @media (max-width: 760px) {
+  .reel {
+    gap: 12px;
+    padding: 12px 14px 14px;
+  }
+
+  .reel-play {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand-logo {
+    width: 48px;
+    height: 48px;
+  }
+
   :root {
     --gutter: 16px;
     --section-space: 72px;
@@ -1843,15 +2055,6 @@ a:hover {
 
   .btn-row .btn {
     width: 100%;
-  }
-
-  .proof-bar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .proof-toggle {
-    align-self: flex-start;
   }
 
   .bento-ai,
