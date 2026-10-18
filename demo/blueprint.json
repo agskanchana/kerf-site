@@ -1,0 +1,40 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"meta": {
+		"title": "Kerf live demo",
+		"description": "Kerf, the WordPress theme for AI-made websites, ready at Kerf → Import design.",
+		"author": "kerf.site"
+	},
+	"landingPage": "/wp-admin/admin.php?page=kerf-import",
+	"preferredVersions": {
+		"php": "8.3",
+		"wp": "latest"
+	},
+	"features": {
+		"networking": true
+	},
+	"login": true,
+	"steps": [
+		{
+			"step": "setSiteOptions",
+			"options": {
+				"blogname": "My Kerf demo",
+				"blogdescription": ""
+			}
+		},
+		{
+			"step": "installTheme",
+			"themeData": {
+				"resource": "url",
+				"url": "https://kerf.site/demo/kerf-demo.zip"
+			},
+			"options": {
+				"activate": true
+			}
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php require '/wordpress/wp-load.php'; $posts = array( array( 'A fresh start for our website', 'Our website now runs on WordPress. It looks exactly as it did, and every word and picture can be changed from the dashboard.' ), array( 'How we work', 'Every project starts with a conversation: what you make, who it is for, and what you want people to do when they find you.' ), array( 'Notes from the studio', 'A few things we learned this season about photographs, short headlines and pages that load quickly on a phone.' ) ); foreach ( $posts as $i => $p ) { wp_insert_post( array( 'post_title' => $p[0], 'post_content' => '<!-- wp:paragraph --><p>' . $p[1] . '</p><!-- /wp:paragraph -->', 'post_status' => 'publish', 'post_date' => gmdate( 'Y-m-d H:i:s', time() - ( $i + 1 ) * 259200 ) ) ); } global $wp_rewrite; $wp_rewrite->set_permalink_structure( '/%postname%/' ); $wp_rewrite->flush_rules( true );"
+		}
+	]
+}
