@@ -12,51 +12,6 @@
 
 	var reduceMotion = window.matchMedia && window.matchMedia( '(prefers-reduced-motion: reduce)' ).matches;
 
-	/* ---------- The live demo ---------- */
-
-	// WordPress Playground runs a private WordPress in the visitor's browser and
-	// sets it up from a blueprint. The same blueprint as demo/blueprint.json
-	// (the links' own address, used without this script), with Kerf's zip
-	// taken from wherever this page is served — kerf.site, or a preview copy —
-	// and passed in the address itself, so no second file has to be fetched.
-	var samplePosts = [
-		"<?php require '/wordpress/wp-load.php';",
-		"$posts = array(",
-		"array( 'A fresh start for our website', 'Our website now runs on WordPress. It looks exactly as it did, and every word and picture can be changed from the dashboard.' ),",
-		"array( 'How we work', 'Every project starts with a conversation: what you make, who it is for, and what you want people to do when they find you.' ),",
-		"array( 'Notes from the studio', 'A few things we learned this season about photographs, short headlines and pages that load quickly on a phone.' )",
-		");",
-		"foreach ( $posts as $i => $p ) {",
-		"wp_insert_post( array( 'post_title' => $p[0], 'post_content' => '<!-- wp:paragraph --><p>' . $p[1] . '</p><!-- /wp:paragraph -->', 'post_status' => 'publish', 'post_date' => gmdate( 'Y-m-d H:i:s', time() - ( $i + 1 ) * 259200 ) ) );",
-		"}",
-		"global $wp_rewrite; $wp_rewrite->set_permalink_structure( '/%postname%/' ); $wp_rewrite->flush_rules( true );"
-	].join( ' ' );
-
-	function demoUrl() {
-		var zip = new URL( 'demo/kerf-demo.zip', document.baseURI ).href;
-		var blueprint = {
-			landingPage: '/wp-admin/admin.php?page=kerf-import',
-			preferredVersions: { php: '8.3', wp: 'latest' },
-			features: { networking: true },
-			login: true,
-			steps: [
-				{ step: 'setSiteOptions', options: { blogname: 'My Kerf demo', blogdescription: '' } },
-				{ step: 'installTheme', themeData: { resource: 'url', url: zip }, options: { activate: true } },
-				{ step: 'runPHP', code: samplePosts }
-			]
-		};
-		return 'https://playground.wordpress.net/#' + encodeURIComponent( JSON.stringify( blueprint ) );
-	}
-
-	// Playground can only fetch the zip over https; a page opened from disk
-	// keeps the links' own address (kerf.site's blueprint).
-	if ( 'https:' === location.protocol ) {
-		var url = demoUrl();
-		document.querySelectorAll( '[data-kerf-demo]' ).forEach( function ( link ) {
-			link.href = url;
-		} );
-	}
-
 	/* ---------- The phone menu ---------- */
 
 	var nav = document.querySelector( '[data-nav]' );
