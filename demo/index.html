@@ -212,20 +212,17 @@
         installTheme.themeData.url = new URL('kerf-demo.zip', location.href).href;
       }
 
-      const slow = setTimeout(() => {
-        loading.textContent = 'Still starting… a first visit downloads WordPress, which can take a minute on a slow connection.';
-      }, 45000);
-
-      // One more try before giving up: a first visit sometimes fails while
-      // Playground sets itself up in the browser.
+      // One more try before giving up: a first visit sometimes stops on
+      // Playground's own error screen, without a word to this page, while a
+      // second start works. A start takes about 20 seconds, so the first is
+      // given 45; the second reuses what the browser has downloaded.
       let client;
       try {
-        client = await startWithin(120000, blueprint);
+        client = await startWithin(45000, blueprint);
       } catch (error) {
-        loading.textContent = 'Starting WordPress again…';
+        loading.textContent = 'Starting WordPress again… a first visit can take a minute.';
         client = await startWithin(120000, blueprint);
       }
-      clearTimeout(slow);
       // startPlaygroundWeb() returns once WordPress is up and the blueprint ran.
       await client.isReady();
       overlay.hidden = true;
