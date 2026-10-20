@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5NH7XW9K3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-Z5NH7XW9K3');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Navigation menus &amp; Links — Documentation — Kerf</title>
+  <meta name="description" content="Edit navigation items in the Menu panel and bind internal links to WordPress pages under Kerf → Links without losing your nav CSS.">
+  <link rel="canonical" href="https://kerf.site/docs/menus-and-links/">
+  <meta property="og:title" content="Navigation menus &amp; Links — Documentation — Kerf">
+  <meta property="og:description" content="Edit navigation items in the Menu panel and bind internal links to WordPress pages under Kerf → Links without losing your nav CSS.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kerf.site/docs/menus-and-links/">
+  <meta property="og:image" content="https://kerf.site/assets/video/kerf-explainer-poster.jpg">
+  <meta name="theme-color" content="#07080d">
+  <link rel="icon" href="../../assets/img/icon-128x128.png">
+  <link rel="apple-touch-icon" href="../../assets/img/icon-256x256.png">
+  <link rel="alternate" type="application/rss+xml" title="Kerf Blog RSS Feed" href="https://kerf.site/blog/rss.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../../assets/css/site.css">
+  <script src="../../assets/js/site.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="nav" data-nav>
+      <div class="container nav-inner">
+        <a class="brand" href="../../">
+          <img class="brand-logo" src="../../assets/img/kerf-logo.png" width="56" height="56" alt="">
+          <span class="brand-name">Kerf</span>
+        </a>
+
+        <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+          <a href="../../#how">How it works</a>
+          <a href="../../#features">Features</a>
+          <a href="../../#demo">Demo</a>
+          <a href="../../#pricing">Pricing</a>
+          <a href="../../#faq">FAQ</a>
+          <a href="../../docs/" aria-current="page">Docs</a>
+          <a href="../../blog/">Blog</a>
+        </nav>
+
+        <div class="nav-end">
+          <a class="btn btn-primary btn-sm nav-cta" data-kerf-demo href="../../demo/" target="_blank" rel="noopener">Try the demo</a>
+          <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation menu">
+            <svg class="icon-menu" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <line class="line-top" x1="4" y1="7" x2="20" y2="7"></line>
+              <line class="line-mid" x1="4" y1="12" x2="20" y2="12"></line>
+              <line class="line-bot" x1="4" y1="17" x2="20" y2="17"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="docs">
+        <div class="container docs-grid">
+          <aside class="docs-aside">
+            <details class="docs-mobile">
+              <summary>Documentation menu</summary>
+              <nav class="docs-nav" aria-label="Documentation">
+          <a href="../" class="docs-home">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+            <span>Documentation home</span>
+          </a>
+          <div class="docs-group">
+            <p class="docs-group-title">Getting Started</p>
+            <ul>
+              <li>
+                <a href="../installation/" class="docs-link">Installation &amp; licence setup</a>
+              </li>
+              <li>
+                <a href="../preparing-your-design/" class="docs-link">Preparing an AI or HTML design</a>
+              </li>
+              <li>
+                <a href="../importing-a-design/" class="docs-link">Importing your design</a>
+              </li>
+            </ul>
+          </div>
+          <div class="docs-group">
+            <p class="docs-group-title">Editing Your Site</p>
+            <ul>
+              <li>
+                <a href="../block-editor-and-canvas/" class="docs-link">Editing in the Block Editor</a>
+              </li>
+              <li>
+                <a href="../menus-and-links/" class="docs-link active" aria-current="page">Navigation menus &amp; Links</a>
+              </li>
+              <li>
+                <a href="../updating-a-design/" class="docs-link">Updating a design &amp; Undo</a>
+              </li>
+            </ul>
+          </div>
+          <div class="docs-group">
+            <p class="docs-group-title">Pages, Blog &amp; Dynamic Content</p>
+            <ul>
+              <li>
+                <a href="../inner-pages-and-blog/" class="docs-link">Inner pages, blog &amp; templates</a>
+              </li>
+              <li>
+                <a href="../markup-contract-and-live-posts/" class="docs-link">Live posts &amp; markup contract</a>
+              </li>
+              <li>
+                <a href="../forms-and-site-details/" class="docs-link">Forms &amp; site details</a>
+              </li>
+            </ul>
+          </div>
+          <div class="docs-group">
+            <p class="docs-group-title">Kerf AI</p>
+            <ul>
+              <li>
+                <a href="../kerf-ai/" class="docs-link">Build &amp; edit with Kerf AI</a>
+              </li>
+            </ul>
+          </div>
+          <div class="docs-group">
+            <p class="docs-group-title">Agencies, Settings &amp; Account</p>
+            <ul>
+              <li>
+                <a href="../client-mode-and-settings/" class="docs-link">Client mode, standalone pages &amp; Settings</a>
+              </li>
+              <li>
+                <a href="../licensing-and-updates/" class="docs-link">Licensing, plans &amp; updates</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+            </details>
+            <div class="docs-desktop">
+              <nav class="docs-nav" aria-label="Documentation">
+          <a href="../" class="docs-home">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+            <span>Documentation home</span>
+          </a>
+          <div class="docs-group">
+            <p class="docs-group-title">Getting Started</p>
+            <ul>
+              <li>
+                <a href="../installation/" class="docs-link">Installation &amp; licence setup</a>
+              </li>
+              <li>
+                <a href="../preparing-your-design/" class="docs-link">Preparing an AI or HTML design</a>
+              </li>
+              <li>
+                <a href="../importing-a-design/" class="docs-link">Importing your design</a>
+              </li>
+            </ul>
+          </div>
+          <div class="docs-group">
+            <p class="docs-group-title">Editing Your Site</p>
+            <ul>
+              <li>
+                <a href="../block-editor-and-canvas/" class="docs-link">Editing in the Block Editor</a>
+              </li>
+              <li>
+                <a href="../menus-and-links/" class="docs-link active" aria-current="page">Navigation menus &amp; Links</a>
+              </li>
+              <li>
+                <a href="../updating-a-design/" class="docs-link">Updating a design &amp; Undo</a>
+              </li>
+            </ul>
+          </div>
+          <div class="docs-group">
+            <p class="docs-group-title">Pages, Blog &amp; Dynamic Content</p>
+            <ul>
+              <li>
+                <a href="../inner-pages-and-blog/" class="docs-link">Inner pages, blog &amp; templates</a>
+              </li>
+              <li>
+                <a href="../markup-contract-and-live-posts/" class="docs-link">Live posts &amp; markup contract</a>
+              </li>
+              <li>
+                <a href="../forms-and-site-details/" class="docs-link">Forms &amp; site details</a>
+              </li>
+            </ul>
+          </div>
+          <div class="docs-group">
+            <p class="docs-group-title">Kerf AI</p>
+            <ul>
+              <li>
+                <a href="../kerf-ai/" class="docs-link">Build &amp; edit with Kerf AI</a>
+              </li>
+            </ul>
+          </div>
+          <div class="docs-group">
+            <p class="docs-group-title">Agencies, Settings &amp; Account</p>
+            <ul>
+              <li>
+                <a href="../client-mode-and-settings/" class="docs-link">Client mode, standalone pages &amp; Settings</a>
+              </li>
+              <li>
+                <a href="../licensing-and-updates/" class="docs-link">Licensing, plans &amp; updates</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+            </div>
+          </aside>
+
+          <article class="docs-content">
+            <nav class="crumbs" aria-label="Breadcrumb">
+              <a href="../">Docs</a>
+              <span aria-hidden="true">/</span>
+              <span>Editing Your Site</span>
+            </nav>
+            <h1>Navigation menus &amp; Links</h1>
+            <p class="docs-lead">Edit navigation items in the Menu panel and bind internal links to WordPress pages under Kerf → Links without losing your nav CSS.</p>
+
+            <div class="prose docs-prose">
+
+          <p>Traditional WordPress themes replace your mockup’s <code>&lt;nav&gt;</code> with <code>wp_nav_menu()</code>, which outputs WordPress’s own <code>ul.menu &gt; li.menu-item</code> markup and breaks every CSS selector your designer wrote. Kerf takes a fundamentally better approach.</p>
+
+          <h2 id="how-kerf-handles-links">How Kerf keeps your nav markup intact</h2>
+          <p>Kerf preserves your navigation’s HTML tags, classes, and attributes <strong>byte for byte</strong>, and binds only the link’s <em>destination</em> to a WordPress page ID or route. When the page renders:</p>
+          <ul>
+            <li>The DOM is still 100% your designer’s DOM, class for class.</li>
+            <li>Links automatically follow the target page—if you rename a page’s slug, move it under a parent page, or change your permalink structure, the navigation URL updates everywhere automatically.</li>
+            <li>Removing a binding restores the mockup’s original <code>href</code>.</li>
+          </ul>
+
+          <h2 id="the-menu-panel">Editing navigation in the Menu panel</h2>
+          <p>Select your header or <code>&lt;nav&gt;</code> block in the editor to open the <strong>Menu</strong> panel in the sidebar. From there you can:</p>
+          <ul>
+            <li>Rename any menu item’s label.</li>
+            <li>Point an item at any WordPress page, post, or custom URL.</li>
+            <li>Reorder items up or down, duplicate an item (cloning the designer’s exact classes), or remove items.</li>
+          </ul>
+
+          <div class="frame">
+            <div class="frame-bar" aria-hidden="true">
+              <div class="frame-dots"><span></span><span></span><span></span></div>
+              <div class="frame-title">Block Editor — The Menu panel</div>
+            </div>
+            <img src="../../assets/img/screenshot-7.png" width="1440" height="900" loading="lazy" alt="The Menu panel in the WordPress editor listing the six Copperline Studio navigation items">
+          </div>
+
+          <h2 id="kerf-links-screen">Managing destinations under Kerf &rarr; Links</h2>
+          <p>At import time, Kerf automatically matches internal links (like <code>about.html</code> or <code>/services</code>) against your existing pages. External URLs, <code>#anchor</code> jumps, <code>mailto:</code>, and <code>tel:</code> links are left untouched.</p>
+          <p>Open <strong>Kerf &rarr; Links</strong> at any time to see every internal link across your site:</p>
+          <ul>
+            <li>Any link whose destination page doesn’t exist yet is flagged in the menu badge.</li>
+            <li>Point an unmatched link to an existing WordPress page from the dropdown, or click <strong>Create page</strong> to generate a matching draft page at that slug in one click.</li>
+          </ul>
+
+          <div class="frame">
+            <div class="frame-bar" aria-hidden="true">
+              <div class="frame-dots"><span></span><span></span><span></span></div>
+              <div class="frame-title">wp-admin — Kerf → Links</div>
+            </div>
+            <img src="../../assets/img/screenshot-9.png" width="1440" height="900" loading="lazy" alt="Kerf Links screen listing all 34 links in Copperline Studio pointed at WordPress pages">
+          </div>
+        
+            </div>
+
+            <nav class="docs-prevnext" aria-label="Pagination">
+              <a href="../block-editor-and-canvas/" class="pn prev">
+                <span class="pn-label">&larr; Previous</span>
+                <span class="pn-title">Editing in the Block Editor</span>
+              </a>
+              <a href="../updating-a-design/" class="pn next">
+                <span class="pn-label">Next &rarr;</span>
+                <span class="pn-title">Updating a design &amp; Undo</span>
+              </a>
+            </nav>
+          </article>
+
+          <aside class="docs-toc" aria-label="On this page">
+            <p class="toc-title">On this page</p>
+            <ul>
+              <li class="depth-2"><a href="#how-kerf-handles-links">How Kerf keeps your nav markup intact</a></li>
+              <li class="depth-2"><a href="#the-menu-panel">Editing navigation in the Menu panel</a></li>
+              <li class="depth-2"><a href="#kerf-links-screen">Managing destinations under Kerf → Links</a></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-top">
+          <a class="brand" href="../../">
+            <img class="brand-logo" src="../../assets/img/kerf-logo.png" width="40" height="40" loading="lazy" alt="">
+            <span class="brand-name">Kerf</span>
+          </a>
+
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="../../#how">How it works</a>
+            <a href="../../#features">Features</a>
+            <a href="../../#demo">Demo</a>
+            <a href="../../#pricing">Pricing</a>
+            <a href="../../#faq">FAQ</a>
+            <a href="../../docs/">Docs</a>
+            <a href="../../blog/">Blog</a>
+            <a href="mailto:hello@kerf.site">hello@kerf.site</a>
+          </nav>
+        </div>
+
+        <p class="footer-legal">&copy; 2026 Kerf. Kerf is not affiliated with the WordPress Foundation.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

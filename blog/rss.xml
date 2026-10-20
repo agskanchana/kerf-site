@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kerf Blog</title>
+    <link>https://kerf.site/blog/</link>
+    <description>Guides, prompt templates, and architectural insights on importing AI-made HTML websites into WordPress with Kerf.</description>
+    <language>en-us</language>
+    <atom:link href="https://kerf.site/blog/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>How to Turn Any AI-Generated HTML Website into a WordPress Site in One Click (Without Elementor or Rebuilding)</title>
+      <link>https://kerf.site/blog/html-to-wordpress-without-rebuilding/</link>
+      <guid>https://kerf.site/blog/html-to-wordpress-without-rebuilding/</guid>
+      <pubDate>Tue, 20 Oct 2026 00:00:00 GMT</pubDate>
+      <description>You asked Claude, ChatGPT, or Gemini to design a website and got a gorgeous HTML/CSS/JS folder. Here is how to put that exact design on WordPress in 10 seconds with 100% CSS fidelity and full block editing.</description>
+    </item>
+    <item>
+      <title>ChatGPT, Claude &amp; Gemini Write Great Websites — Here Is the Exact Prompt Brief to Make Them WordPress-Ready</title>
+      <link>https://kerf.site/blog/claude-chatgpt-gemini-to-wordpress/</link>
+      <guid>https://kerf.site/blog/claude-chatgpt-gemini-to-wordpress/</guid>
+      <pubDate>Sun, 18 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Copy our battle-tested prompt template for Claude Artifacts, ChatGPT, Gemini, and Google Stitch so the HTML ZIP you generate imports into WordPress with working menus, forms, and live blog templates.</description>
+    </item>
+    <item>
+      <title>Why Page Builders Ruin Custom HTML Designs (And How Zero-Wrapper Block Conversion Fixes It)</title>
+      <link>https://kerf.site/blog/why-page-builders-break-custom-designs/</link>
+      <guid>https://kerf.site/blog/why-page-builders-break-custom-designs/</guid>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
+      <description>A technical look at why importing custom HTML into widget builders or standard WordPress blocks breaks child combinators, CSS Grid, and SVG icons—and how Kerf preserves the exact DOM.</description>
+    </item>
+    <item>
+      <title>The 2026 Agency Playbook: Ship Custom WordPress Client Sites in an Afternoon with AI and Kerf</title>
+      <link>https://kerf.site/blog/ai-wordpress-workflow-for-agencies/</link>
+      <guid>https://kerf.site/blog/ai-wordpress-workflow-for-agencies/</guid>
+      <pubDate>Mon, 12 Oct 2026 00:00:00 GMT</pubDate>
+      <description>How freelancers and web agencies combine AI design generation with Kerf’s multi-page importer, section-by-section updates, Site Details, and Client Mode to deliver higher-margin WordPress projects.</description>
+    </item>
+    <item>
+      <title>Static HTML Hosting vs. WordPress for AI Websites: Why Clients Still Need a Real CMS</title>
+      <link>https://kerf.site/blog/static-html-vs-wordpress-cms/</link>
+      <guid>https://kerf.site/blog/static-html-vs-wordpress-cms/</guid>
+      <pubDate>Fri, 09 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Hosting an AI-generated HTML file on a static host takes two minutes—until the client asks to publish blog posts, edit text without code, manage SEO metadata, or view form leads. Here is how to get both.</description>
+    </item>
+    <item>
+      <title>Bring Your Own Gemini Key: How to Build and Edit Custom WordPress Pages with Kerf AI (With Zero Monthly AI Markup)</title>
+      <link>https://kerf.site/blog/inside-kerf-ai-gemini-wordpress/</link>
+      <guid>https://kerf.site/blog/inside-kerf-ai-gemini-wordpress/</guid>
+      <pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Most WordPress AI plugins lock you into a $29/month credit subscription. Kerf AI connects directly to your own Google Gemini API key to build full sites, turn Word docs into styled pages, and edit sections in place.</description>
+    </item>
+  </channel>
+</rss>

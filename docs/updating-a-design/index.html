@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5NH7XW9K3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-Z5NH7XW9K3');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Updating a design &amp; Undo — Documentation — Kerf</title>
+  <meta name="description" content="Apply a revised mockup ZIP section by section under Kerf → Update design without overwriting edits you already made in WordPress.">
+  <link rel="canonical" href="https://kerf.site/docs/updating-a-design/">
+  <meta property="og:title" content="Updating a design &amp; Undo — Documentation — Kerf">
+  <meta property="og:description" content="Apply a revised mockup ZIP section by section under Kerf → Update design without overwriting edits you already made in WordPress.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kerf.site/docs/updating-a-design/">
+  <meta property="og:image" content="https://kerf.site/assets/video/kerf-explainer-poster.jpg">
+  <meta name="theme-color" content="#07080d">
+  <link rel="icon" href="../../assets/img/icon-128x128.png">
+  <link rel="apple-touch-icon" href="../../assets/img/icon-256x256.png">
+  <link rel="alternate" type="application/rss+xml" title="Kerf Blog RSS Feed" href="https://kerf.site/blog/rss.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../../assets/css/site.css">
+  <script src="../../assets/js/site.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="nav" data-nav>
+      <div class="container nav-inner">
+        <a class="brand" href="../../">
+          <img class="brand-logo" src="../../assets/img/kerf-logo.png" width="56" height="56" alt="">
+          <span class="brand-name">Kerf</span>
+        </a>
+
+        <nav class="nav-links" id="nav-links" aria-label="Main navigation">
+          <a href="../../#how">How it works</a>
+          <a href="../../#features">Features</a>
+          <a href="../../#demo">Demo</a>
+          <a href="../../#pricing">Pricing</a>
+          <a href="../../#faq">FAQ</a>
+          <a href="../../docs/" aria-current="page">Docs</a>
+          <a href="../../blog/">Blog</a>
+        </nav>
+
+        <div class="nav-end">
+          <a class="btn btn-primary btn-sm nav-cta" data-kerf-demo href="../../demo/" target="_blank" rel="noopener">Try the demo</a>
+          <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation menu">
+            <svg class="icon-menu" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <line class="line-top" x1="4" y1="7" x2="20" y2="7"></line>
+              <line class="line-mid" x1="4" y1="12" x2="20" y2="12"></line>
+              <line class="line-bot" x1="4" y1="17" x2="20" y2="17"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="docs">
+        <div class="container docs-grid">
+          <aside class="docs-aside">
+            <details class="docs-mobile">
+              <summary>Documentation menu</summary>
+              <nav class="docs-nav" aria-label="Documentation">
+          <a href="../" class="docs-home">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+            <span>Documentation home</span>
+          </a>
+          <div class="docs-group">
+            <p class="docs-group-title">Getting Started</p>
+            <ul>
+              <li>
+                <a href="../installation/" class="docs-link">Installation &amp; licence setup</a>
+              </li>
+              <li>
+                <a href="../preparing-your-design/" class="docs-link">Preparing an AI or HTML design</a>
+              </li>
+              <li>
+                <a href="../importing-a-design/" class="docs-link">Importing your design</a>
+              </li>
+            </ul>
+          </div>
+          <div class="docs-group">
+            <p class="docs-group-title">Editing Your Site</p>
+            <ul>
+              <li>
+                <a href="../block-editor-and-canvas/" class="docs-link">Editing in the Block Editor</a>
+              </li>
+              <li>
+                <a href="../menus-and-links/" class="docs-link">Navigation menus &amp; Links</a>
+              </li>
+              <li>
+                <a href="../updating-a-design/" class="docs-link active" aria-current="page">Updating a design &amp; Undo</a>
+              </li>
+            </ul>
+          </div>
+          <div class="docs-group">
+            <p class="docs-group-title">Pages, Blog &amp; Dynamic Content</p>
+            <ul>
+              <li>
+                <a href="../inner-pages-and-blog/" class="docs-link">Inner pages, blog &amp; templates</a>
+              </li>
+              <li>
+                <a href="../markup-contract-and-live-posts/" class="docs-link">Live posts &amp; markup contract</a>
+              </li>
+              <li>
+                <a href="../forms-and-site-details/" class="docs-link">Forms &amp; site details</a>
+              </li>
+            </ul>
+          </div>
+          <div class="docs-group">
+            <p class="docs-group-title">Kerf AI</p>
+            <ul>
+              <li>
+                <a href="../kerf-ai/" class="docs-link">Build &amp; edit with Kerf AI</a>
+              </li>
+            </ul>
+          </div>
+          <div class="docs-group">
+            <p class="docs-group-title">Agencies, Settings &amp; Account</p>
+            <ul>
+              <li>
+                <a href="../client-mode-and-settings/" class="docs-link">Client mode, standalone pages &amp; Settings</a>
+              </li>
+              <li>
+                <a href="../licensing-and-updates/" class="docs-link">Licensing, plans &amp; updates</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+            </details>
+            <div class="docs-desktop">
+              <nav class="docs-nav" aria-label="Documentation">
+          <a href="../" class="docs-home">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+            <span>Documentation home</span>
+          </a>
+          <div class="docs-group">
+            <p class="docs-group-title">Getting Started</p>
+            <ul>
+              <li>
+                <a href="../installation/" class="docs-link">Installation &amp; licence setup</a>
+              </li>
+              <li>
+                <a href="../preparing-your-design/" class="docs-link">Preparing an AI or HTML design</a>
+              </li>
+              <li>
+                <a href="../importing-a-design/" class="docs-link">Importing your design</a>
+              </li>
+            </ul>
+          </div>
+          <div class="docs-group">
+            <p class="docs-group-title">Editing Your Site</p>
+            <ul>
+              <li>
+                <a href="../block-editor-and-canvas/" class="docs-link">Editing in the Block Editor</a>
+              </li>
+              <li>
+                <a href="../menus-and-links/" class="docs-link">Navigation menus &amp; Links</a>
+              </li>
+              <li>
+                <a href="../updating-a-design/" class="docs-link active" aria-current="page">Updating a design &amp; Undo</a>
+              </li>
+            </ul>
+          </div>
+          <div class="docs-group">
+            <p class="docs-group-title">Pages, Blog &amp; Dynamic Content</p>
+            <ul>
+              <li>
+                <a href="../inner-pages-and-blog/" class="docs-link">Inner pages, blog &amp; templates</a>
+              </li>
+              <li>
+                <a href="../markup-contract-and-live-posts/" class="docs-link">Live posts &amp; markup contract</a>
+              </li>
+              <li>
+                <a href="../forms-and-site-details/" class="docs-link">Forms &amp; site details</a>
+              </li>
+            </ul>
+          </div>
+          <div class="docs-group">
+            <p class="docs-group-title">Kerf AI</p>
+            <ul>
+              <li>
+                <a href="../kerf-ai/" class="docs-link">Build &amp; edit with Kerf AI</a>
+              </li>
+            </ul>
+          </div>
+          <div class="docs-group">
+            <p class="docs-group-title">Agencies, Settings &amp; Account</p>
+            <ul>
+              <li>
+                <a href="../client-mode-and-settings/" class="docs-link">Client mode, standalone pages &amp; Settings</a>
+              </li>
+              <li>
+                <a href="../licensing-and-updates/" class="docs-link">Licensing, plans &amp; updates</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+            </div>
+          </aside>
+
+          <article class="docs-content">
+            <nav class="crumbs" aria-label="Breadcrumb">
+              <a href="../">Docs</a>
+              <span aria-hidden="true">/</span>
+              <span>Editing Your Site</span>
+            </nav>
+            <h1>Updating a design &amp; Undo</h1>
+            <p class="docs-lead">Apply a revised mockup ZIP section by section under Kerf → Update design without overwriting edits you already made in WordPress.</p>
+
+            <div class="prose docs-prose">
+
+          <p>Design rarely stops at v1. When your designer or AI tool gives you an updated ZIP with a new pricing section, tweaked typography, or a redesigned hero, you don’t have to re-import from scratch and lose the copy changes you already made in WordPress.</p>
+
+          <h2 id="how-section-sync-works">How section-by-section sync works</h2>
+          <p>When Kerf imports a design, it stamps each top-level section with provenance metadata (its path, structural key, and content hash). When you upload a newer ZIP or paste updated HTML under <strong>Kerf &rarr; Update design</strong>, Kerf aligns the old and new section trees and classifies every section:</p>
+          <ul>
+            <li><strong>Unchanged:</strong> Identical in both mockups—left untouched.</li>
+            <li><strong>Changed in mockup:</strong> Updated in the new ZIP and untouched in WordPress—ticked by default to apply.</li>
+            <li><strong>Added / Removed:</strong> New sections in the updated mockup or sections removed from it—each with its own checkbox.</li>
+            <li><strong>Edited in WordPress:</strong> Sections where you already changed words or photos in the Block Editor.</li>
+          </ul>
+
+          <h2 id="comparing-and-applying">Comparing &amp; applying a newer mockup</h2>
+          <ol>
+            <li>Go to <strong>Kerf &rarr; Update design</strong> and upload your revised ZIP (or paste updated HTML).</li>
+            <li>Review the side-by-side diff summary for your Header, Footer, Front Page, and any inner pages included in the ZIP.</li>
+            <li>Tick or untick individual sections, and leave <strong>Update stylesheets, scripts &amp; new pictures</strong> enabled if your CSS or assets changed.</li>
+            <li>Click <strong>Apply selected changes</strong>.</li>
+          </ol>
+
+          <h2 id="protecting-wordpress-edits">Protecting sections edited in WordPress</h2>
+          <p>If you edited a section in WordPress <em>and</em> the mockup also changed that same section, Kerf leaves the checkbox <strong>unticked by default</strong> and warns you clearly so you never accidentally overwrite live client edits.</p>
+
+          <h2 id="one-click-undo">One-click Undo</h2>
+          <p>Every import and every design update is wrapped in Kerf’s undo recorder. If you ever want to roll back an import or an update, click <strong>Undo last import / update</strong> on the Kerf Dashboard or Update screen to restore your pages, header/footer parts, templates, and asset settings to their exact prior revision.</p>
+        
+            </div>
+
+            <nav class="docs-prevnext" aria-label="Pagination">
+              <a href="../menus-and-links/" class="pn prev">
+                <span class="pn-label">&larr; Previous</span>
+                <span class="pn-title">Navigation menus &amp; Links</span>
+              </a>
+              <a href="../inner-pages-and-blog/" class="pn next">
+                <span class="pn-label">Next &rarr;</span>
+                <span class="pn-title">Inner pages, blog &amp; templates</span>
+              </a>
+            </nav>
+          </article>
+
+          <aside class="docs-toc" aria-label="On this page">
+            <p class="toc-title">On this page</p>
+            <ul>
+              <li class="depth-2"><a href="#how-section-sync-works">How section-by-section sync works</a></li>
+              <li class="depth-2"><a href="#comparing-and-applying">Comparing &amp; applying a newer mockup</a></li>
+              <li class="depth-2"><a href="#protecting-wordpress-edits">Protecting sections edited in WordPress</a></li>
+              <li class="depth-2"><a href="#one-click-undo">One-click Undo</a></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-top">
+          <a class="brand" href="../../">
+            <img class="brand-logo" src="../../assets/img/kerf-logo.png" width="40" height="40" loading="lazy" alt="">
+            <span class="brand-name">Kerf</span>
+          </a>
+
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="../../#how">How it works</a>
+            <a href="../../#features">Features</a>
+            <a href="../../#demo">Demo</a>
+            <a href="../../#pricing">Pricing</a>
+            <a href="../../#faq">FAQ</a>
+            <a href="../../docs/">Docs</a>
+            <a href="../../blog/">Blog</a>
+            <a href="mailto:hello@kerf.site">hello@kerf.site</a>
+          </nav>
+        </div>
+
+        <p class="footer-legal">&copy; 2026 Kerf. Kerf is not affiliated with the WordPress Foundation.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

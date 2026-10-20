@@ -208,4 +208,34 @@
 			watch.observe( el );
 		} );
 	}
+
+	/* ---------- Documentation: highlight current TOC heading ---------- */
+
+	var tocLinks = Array.prototype.slice.call( document.querySelectorAll( '.docs-toc a' ) );
+	if ( tocLinks.length && ( 'IntersectionObserver' in window ) ) {
+		var tocMap = {};
+		var tocHeadings = [];
+		tocLinks.forEach( function ( link ) {
+			var href = link.getAttribute( 'href' ) || '';
+			var id = decodeURIComponent( href.replace( /^#/, '' ) );
+			var el = id && document.getElementById( id );
+			if ( el ) {
+				tocMap[ id ] = link;
+				tocHeadings.push( el );
+			}
+		} );
+		var tocObserver = new IntersectionObserver( function ( entries ) {
+			entries.forEach( function ( entry ) {
+				if ( entry.isIntersecting && tocMap[ entry.target.id ] ) {
+					tocLinks.forEach( function ( link ) {
+						link.classList.remove( 'toc-active' );
+					} );
+					tocMap[ entry.target.id ].classList.add( 'toc-active' );
+				}
+			} );
+		}, { rootMargin: '-88px 0px -68% 0px', threshold: 0 } );
+		tocHeadings.forEach( function ( heading ) {
+			tocObserver.observe( heading );
+		} );
+	}
 }() );
