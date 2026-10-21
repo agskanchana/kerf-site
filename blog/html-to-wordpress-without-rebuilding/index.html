@@ -121,16 +121,16 @@
           <tr>
             <td><strong>1. Rebuild by hand in Elementor / Divi</strong></td>
             <td>1–3 days per site</td>
-            <td>You recreate every section by eye inside a proprietary widget tree. Spacing shifts, custom CSS animations disappear, DOM bloat triples, and you pay an annual plugin subscription forever.</td>
+            <td>You recreate every section by eye inside a proprietary widget tree. Spacing shifts, custom CSS animations disappear, the page fills with the builder's wrappers, and you pay an annual plugin subscription forever.</td>
           </tr>
           <tr>
             <td><strong>2. Convert to core Gutenberg blocks</strong></td>
             <td>4–8 hours of fixing CSS</td>
-            <td>Standard block converters normalize your markup—wrapping tables in <code>&lt;figure class="wp-block-table"&gt;</code> and replacing your <code>&lt;nav&gt;</code> with <code>wp_nav_menu()</code>. Suddenly 30% of your stylesheet selectors stop matching.</td>
+            <td>Standard block converters normalize your markup—wrapping tables in <code>&lt;figure class="wp-block-table"&gt;</code> and replacing your <code>&lt;nav&gt;</code> with <code>wp_nav_menu()</code>. Suddenly stylesheet selectors written for your original markup stop matching.</td>
           </tr>
           <tr>
             <td><strong>3. Hand-code a custom PHP theme</strong></td>
-            <td>$1,500+ or days of PHP</td>
+            <td>Days of PHP, or a developer's bill</td>
             <td>Splitting <code>header.php</code>, <code>footer.php</code>, <code>functions.php</code>, and registering editable fields in ACF works—but the moment you want to edit a section visually, you’re back in code.</td>
           </tr>
         </tbody>
@@ -138,10 +138,10 @@
 
       <blockquote>
         <h4>The Root Cause</h4>
-        <p>Every other HTML-to-WordPress tool converts your design <em>into</em> its own widget or block vocabulary. Every wrapper element or renamed class is a markup decision your designer didn’t make—and the cost shows up as CSS that quietly breaks.</p>
+        <p>The usual HTML-to-WordPress routes convert your design <em>into</em> their own widget or block vocabulary. Every wrapper element or renamed class is a markup decision your designer didn’t make—and the cost shows up as CSS that quietly breaks.</p>
       </blockquote>
 
-      <h2 id="how-kerf-works">How Kerf Imports HTML into WordPress with Zero Markup Loss</h2>
+      <h2 id="how-kerf-works">How Kerf Imports HTML into WordPress Without Rewriting Your Markup</h2>
 
       <p>We built <strong>Kerf</strong> around a simple rule: <em>the mockup is the design, and the theme’s job is to get out of its way</em>. Instead of forcing your HTML into opinionated widgets, Kerf is a WordPress full-site-editing theme with a deterministic DOM converter and asset pipeline built inside.</p>
 
