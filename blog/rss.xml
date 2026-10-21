@@ -7,11 +7,11 @@
     <language>en-us</language>
     <atom:link href="https://kerf.site/blog/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>How to Turn Any AI-Generated HTML Website into a WordPress Site in One Click (Without Elementor or Rebuilding)</title>
+      <title>How to Turn an AI-Generated HTML Website into a WordPress Site in One Click (Without Elementor or Rebuilding)</title>
       <link>https://kerf.site/blog/html-to-wordpress-without-rebuilding/</link>
       <guid>https://kerf.site/blog/html-to-wordpress-without-rebuilding/</guid>
       <pubDate>Tue, 20 Oct 2026 00:00:00 GMT</pubDate>
-      <description>You asked Claude, ChatGPT, or Gemini to design a website and got a gorgeous HTML/CSS/JS folder. Here is how to put that exact design on WordPress in 10 seconds with 100% CSS fidelity and full block editing.</description>
+      <description>You asked Claude, ChatGPT, or Gemini to design a website and got a gorgeous HTML/CSS/JS folder. Here is how to put that same design on WordPress in one click, its HTML and CSS kept as written, with full block editing.</description>
     </item>
     <item>
       <title>ChatGPT, Claude &amp; Gemini Write Great Websites — Here Is the Exact Prompt Brief to Make Them WordPress-Ready</title>
