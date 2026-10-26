@@ -7,6 +7,13 @@
     <language>en-us</language>
     <atom:link href="https://kerf.site/blog/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>Pixel-Perfect HTML to WordPress: How to Convert a Design Without Changing a Pixel (and Prove It)</title>
+      <link>https://kerf.site/blog/pixel-perfect-html-to-wordpress/</link>
+      <guid>https://kerf.site/blog/pixel-perfect-html-to-wordpress/</guid>
+      <pubDate>Mon, 26 Oct 2026 00:00:00 GMT</pubDate>
+      <description>“Pixel-perfect” is the most overused promise in HTML-to-WordPress conversion. Here is where conversions drift, how to measure the result with a screenshot diff and a selector audit, and how Kerf keeps an AI-made design identical.</description>
+    </item>
+    <item>
       <title>Google Stitch to WordPress: How to Turn a Stitch Design into an Editable WordPress Site</title>
       <link>https://kerf.site/blog/google-stitch-to-wordpress/</link>
       <guid>https://kerf.site/blog/google-stitch-to-wordpress/</guid>
