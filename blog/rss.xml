@@ -7,6 +7,27 @@
     <language>en-us</language>
     <atom:link href="https://kerf.site/blog/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>How to Hand a WordPress Site to a Client Without Them Breaking the Layout</title>
+      <link>https://kerf.site/blog/hand-over-wordpress-site-client-mode/</link>
+      <guid>https://kerf.site/blog/hand-over-wordpress-site-client-mode/</guid>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 GMT</pubDate>
+      <description>The riskiest moment of a custom WordPress build is the handover: one dragged column or deleted wrapper and the design is gone. Client mode locks the structure while every word, picture and link stays editable, and Site details keeps the phone number in one place.</description>
+    </item>
+    <item>
+      <title>Why WordPress Menus Break Your Design’s Navigation CSS (and How to Keep Your Own Markup)</title>
+      <link>https://kerf.site/blog/wordpress-menu-breaks-design-nav-css/</link>
+      <guid>https://kerf.site/blog/wordpress-menu-breaks-design-nav-css/</guid>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Most WordPress themes replace your design’s nav with their own ul.menu list, so every CSS rule written for the original stops matching. Here is what changes, and how Kerf keeps your tags and classes while the menu stays editable.</description>
+    </item>
+    <item>
+      <title>AI Tools Make a Home Page. Your WordPress Site Also Needs a Blog, Single Post, Search and 404</title>
+      <link>https://kerf.site/blog/wordpress-blog-post-404-templates-from-html/</link>
+      <guid>https://kerf.site/blog/wordpress-blog-post-404-templates-from-html/</guid>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Most AI website generators stop at index.html, but a WordPress site also needs a blog index, a post template, pages, archives, search results and a 404. How Kerf gives every one of them your design’s look, and how to supply your own.</description>
+    </item>
+    <item>
       <title>Pixel-Perfect HTML to WordPress: How to Convert a Design Without Changing a Pixel (and Prove It)</title>
       <link>https://kerf.site/blog/pixel-perfect-html-to-wordpress/</link>
       <guid>https://kerf.site/blog/pixel-perfect-html-to-wordpress/</guid>
